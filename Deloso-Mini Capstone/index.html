@@ -12,6 +12,7 @@
         <div class="top-controls">
             <button id="dark-mode-toggle">🌙 Dark Mode</button>
             <button id="export-btn">📥 Export JSON</button>
+            <button id="clear-tasks-btn">🗑️ Clear Tasks</button>
         </div>
         <div id="notification" class="notification"></div>
         <div id="loading" class="loading hidden">Loading...</div>
@@ -28,6 +29,7 @@
                 <option value="Medium">Medium Priority</option>
                 <option value="High">High Priority</option>
             </select>
+            <input type="number" id="timer-input" placeholder="Timer minutes" min="0">
             <button type="submit" id="add-task-btn">Add Task</button>
         </form>
         <div class="filters">
