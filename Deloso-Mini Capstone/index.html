@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Task Manager</h1>
+        <div class="top-controls">
+            <button id="dark-mode-toggle">🌙 Dark Mode</button>
+            <button id="export-btn">📥 Export JSON</button>
+        </div>
+        <div id="notification" class="notification"></div>
+        <div id="loading" class="loading hidden">Loading...</div>
+        <form id="task-form">
+            <input type="text" id="task-input" placeholder="Enter a new task" required>
+            <select id="category-select">
+                <option value="General">General</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+            <select id="priority-select">
+                <option value="Low">Low Priority</option>
+                <option value="Medium">Medium Priority</option>
+                <option value="High">High Priority</option>
+            </select>
+            <button type="submit" id="add-task-btn">Add Task</button>
+        </form>
+        <div class="filters">
+            <input type="text" id="search-input" placeholder="Search tasks...">
+            <select id="filter-select">
+                <option value="all">All Categories</option>
+                <option value="General">General</option>
+                <option value="Work">Work</option>
+                <option value="Personal">Personal</option>
+                <option value="Urgent">Urgent</option>
+            </select>
+        </div>
+        <div id="task-counter" class="counter">
+            Total: 0 | Completed: 0 | Pending: 0
+        </div>
+        <ul id="task-list"></ul>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
