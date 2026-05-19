@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="auth-screen" class="auth-screen">
+        <div class="login-card">
+            <h1>Sign In</h1>
+            <form id="login-form">
+                <input type="text" id="username-input" placeholder="Enter username" required>
+                <button type="submit" id="signin-btn">Sign In</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="app-screen" class="hidden">
+        <header class="app-header">
+            <div>
+                <h1>Task Manager Dashboard</h1>
+                <div id="user-greeting" class="user-greeting"></div>
+            </div>
+            <button id="sign-out-btn" class="secondary-btn">Sign Out</button>
+        </header>
+
+        <nav class="tab-nav">
+            <button class="tab-btn active" data-tab="home">Home</button>
+            <button class="tab-btn" data-tab="completed">Completed</button>
+            <button class="tab-btn" data-tab="pending">Pendings</button>
+        </nav>
+
+        <div id="notification" class="notification"></div>
+        <div id="loading" class="loading hidden">Loading...</div>
+
+        <section id="home-tab" class="tab-content">
+            <div class="container">
+                <div class="top-controls">
+                    <button id="dark-mode-toggle">🌙 Dark Mode</button>
+                    <button id="clear-tasks-btn">🗑️ Clear Tasks</button>
+                </div>
+                <form id="task-form">
+                    <input type="text" id="task-input" placeholder="Enter a new task" required>
+                    <select id="category-select">
+                        <option value="General">General</option>
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                    <select id="priority-select">
+                        <option value="Low">Low Priority</option>
+                        <option value="Medium">Medium Priority</option>
+                        <option value="High">High Priority</option>
+                    </select>
+                    <input type="datetime-local" id="due-date-input" class="small-input" placeholder="Due date and time">
+                    <button type="submit" id="add-task-btn">Add Task</button>
+                </form>
+                <div class="search-row">
+                    <input type="text" id="search-input" placeholder="Search tasks...">
+                </div>
+                <div class="filters">
+                    <select id="filter-select">
+                        <option value="all">All Categories</option>
+                        <option value="General">General</option>
+                        <option value="Work">Work</option>
+                        <option value="Personal">Personal</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+                </div>
+                <div id="task-counter" class="counter hidden">
+                    Total: 0 | Completed: 0 | Pending: 0
+                </div>
+                <ul id="task-list" class="task-list"></ul>
+            </div>
+        </section>
+
+        <section id="completed-tab" class="tab-content hidden">
+            <div class="container">
+                <div class="completed-header">
+                    <h2>Completed Tasks</h2>
+                    <button id="export-btn">📥 Export JSON</button>
+                </div>
+                <ul id="completed-list" class="task-list"></ul>
+            </div>
+        </section>
+
+        <section id="pending-tab" class="tab-content hidden">
+            <div class="container">
+                <h2>Pending Tasks</h2>
+                <ul id="pending-list" class="task-list"></ul>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
